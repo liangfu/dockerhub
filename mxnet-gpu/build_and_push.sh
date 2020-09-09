@@ -6,7 +6,7 @@ $(aws ecr get-login --registry-ids ${account_id} --region cn-north-1 --no-includ
 docker pull ${registry_uri}/mxnet-src:latest
 docker build -t mxnet -f Dockerfile . --build-arg REGISTRY_URI=${registry_uri}
 
-docker run --runtime=nvidia -t mxnet
+docker run --runtime=nvidia -t mxnet-gpu
 
-docker tag mxnet ${registry_uri}/mxnet
-docker push ${registry_uri}/mxnet
+docker tag mxnet-gpu ${registry_uri}/mxnet-gpu
+docker push ${registry_uri}/mxnet-gpu

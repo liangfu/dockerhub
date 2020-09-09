@@ -12,7 +12,7 @@ aws ecr describe-repositories --repository-names "${image}" --region ${region} |
 docker pull ${registry_uri}/mxnet-src:latest
 docker build -t ${image} -f Dockerfile . --build-arg REGISTRY_URI=${registry_uri}
 
-docker run --runtime=nvidia -t ${image}
+docker run -t ${image}
 
 docker tag ${image} ${fullname}
 docker push ${fullname}

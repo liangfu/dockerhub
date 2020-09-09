@@ -13,7 +13,7 @@ aws ecr describe-repositories --repository-names "${image}" --region ${region} |
 docker pull 250779322837.dkr.ecr.cn-north-1.amazonaws.com.cn/mxnet-cpu:latest
 docker build -t ${image} -f Dockerfile .
 
-docker run --runtime=nvidia -t ${image}
+docker run -t ${image}
 
-# docker tag ${image} ${fullname}
-# docker push ${fullname}
+docker tag ${image} ${fullname}
+docker push ${fullname}

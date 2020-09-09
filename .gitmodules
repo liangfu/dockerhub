@@ -1,4 +1,4 @@
 [submodule "gluon-nlp/gluon-nlp"]
-	path = gluon-nlp/gluon-nlp
+	path = gluon-nlp-gpu/gluon-nlp
 	url = https://github.com/dmlc/gluon-nlp.git
 	branch = master
